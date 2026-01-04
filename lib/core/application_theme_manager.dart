@@ -5,6 +5,12 @@ class ApplicationThemeManager {
   static ThemeData themeDataLight = ThemeData(
     primaryColor: primaryColor,
     scaffoldBackgroundColor: const Color(0xffDFECDB),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedIconTheme: IconThemeData(color: primaryColor, size: 32),
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+    ),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       centerTitle: true,

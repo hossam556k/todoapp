@@ -117,13 +117,13 @@ class _LoginViewState extends State<LoginView> {
                         borderSide: BorderSide(color: theme.primaryColor),
                       ),
                     ),
-                    validator: (value) {
+                    /*validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return "plz enter your password";
                       }
 
                       return null;
-                    },
+                    },*/
                   ),
                   const Text(
                     "forgot password ",
@@ -133,9 +133,13 @@ class _LoginViewState extends State<LoginView> {
                   const SizedBox(height: 20),
                   FilledButton(
                     onPressed: () {
-                      if (fromKey.currentState!.validate()) {
+                      /*if (fromKey.currentState!.validate()) {
                         print("vaild");
-                      }
+                      }*/
+                      Navigator.pushReplacementNamed(
+                        context,
+                        PageRouteNames.task,
+                      );
                     },
                     style: FilledButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
@@ -149,6 +153,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                       children: [
                         Text(
                           "LOGIN",
@@ -165,7 +170,7 @@ class _LoginViewState extends State<LoginView> {
                       Navigator.pushNamed(context, PageRouteNames.registration);
                     },
 
-                    child: Text(
+                    child: const Text(
                       "Create Account ",
                       style: TextStyle(decoration: TextDecoration.underline),
                     ),
